@@ -19,14 +19,25 @@ repositories {
 }
 
 dependencies {
-    // Use JUnit test framework.
-    testImplementation libs.junit
+    // Guava (utility lib, optional)
+    implementation 'com.google.guava:guava:32.1.2-jre'
 
-    // This dependency is used by the application.
-    implementation libs.guava
+    // JUnit 5
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
 
+    // Spring Boot
+    implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
     implementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // AspectJ
+    implementation 'org.aspectj:aspectjrt:1.9.20.1'
+    implementation 'org.aspectj:aspectjweaver:1.9.20.1'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.30'
+    annotationProcessor 'org.projectlombok:lombok:1.18.30'
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
